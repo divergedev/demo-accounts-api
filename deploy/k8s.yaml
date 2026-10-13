@@ -5,6 +5,8 @@ metadata:
   namespace: demo-bank
   labels:
     app: accounts-api
+    divergedev.com/service: accounts-api
+    divergedev.com/role: baseline
 spec:
   replicas: 1
   selector:
@@ -14,6 +16,8 @@ spec:
     metadata:
       labels:
         app: accounts-api
+        divergedev.com/service: accounts-api
+        divergedev.com/role: baseline
     spec:
       containers:
         - name: accounts-api
@@ -37,6 +41,10 @@ kind: Service
 metadata:
   name: accounts-api
   namespace: demo-bank
+  labels:
+    app: accounts-api
+    divergedev.com/service: accounts-api
+    divergedev.com/role: baseline
 spec:
   selector:
     app: accounts-api
